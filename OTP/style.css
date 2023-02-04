@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'roboto-mono', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    height: 100vh;
+}
+
+.otp-card{
+    text-align: center;
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 3rem;
+    box-shadow: 0 10px 40px -30px #000;
+}
+
+.otp-card-inputs{
+    margin: 30px;
+    display: grid;
+    gap: 30px;
+    justify-content: center;
+    grid-template-columns: repeat(6, auto);
+}
+
+.otp-card-inputs input{
+    width: 60px;
+    height: 70px;
+    font-size: 35px;
+    text-align: center;
+    border-radius: 20px;
+    border: 2px solid #333;
+}
+
+.otp-card-inputs input:focus{
+    outline: 2px solid #12abc3;
+    border-color: transparent;
+}
+
+.otp-card button{
+    background-color: #666;
+    border: none;
+    padding: 15px 50px;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.otp-card button:hover{
+    opacity: .7;
+    /*cursor: default;*/
+
+}
+
+.otp-card button[disabled]{
+    opacity: .5;
+    cursor: default;
+}

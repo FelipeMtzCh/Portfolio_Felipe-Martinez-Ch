@@ -1,0 +1,221 @@
+@import "variables";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $white;
+}
+
+body {
+  font: 18px "Roboto", sans-serif;
+  color: $black;
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: $bg no-repeat center;
+    background-size: cover;
+  }
+}
+
+.profile-card {
+  box-shadow: 0 18px 200px -60px $black;
+  border-radius: 50px;
+  width: 650px;
+  position: relative;
+  backdrop-filter: blur(20px);
+  border: 2px solid $border;
+  padding: 3rem 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @media screen and (max-width: 760px) {
+    width: auto;
+  }
+
+  &-img img {
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 10px 60px -10px rgba($color: #387373, $alpha: 0.5);
+  }
+
+  &-desc {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+
+      & + div {
+        font-size: 20px;
+      }
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+  &-info {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+
+    @media screen and (max-width: 576px) {
+      gap: 30px;
+    }
+
+    & > div {
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-align: center;
+
+      & > *:first-child {
+        font-weight: bold;
+        letter-spacing: 3px;
+        font-size: 2rem;
+        margin-bottom: 15px;
+      }
+
+      & > *:last-child {
+        font-size: 16px;
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    a {
+      display: inline-flex;
+      width: 55px;
+      height: 55px;
+      margin: 15px;
+      border-radius: 40%;
+      align-items: center;
+      justify-content: center;
+      color: $white;
+      position: relative;
+      flex-shrink: 0;
+      transition: all 0.2s;
+
+      @media screen and (max-width: 768px) {
+        width: 50px;
+        height: 50px;
+        margin: 10px;
+      }
+
+      @media screen and (min-width: 768px) {
+        &:hover {
+          transform: scale(1.2) translateY(-5px);
+        }
+      }
+
+      &.whatsapp {
+        background: linear-gradient(45deg, $bg, $border);
+      }
+
+      &.twitter {
+        background: linear-gradient(45deg, #1da1f1, #0e71c8);
+      }
+
+      &.instagram {
+        background: linear-gradient(
+          45deg,
+          #405de6,
+          #5851db,
+          #833ab4,
+          #c13584,
+          #fd1d1d
+        );
+      }
+
+      &.github {
+        background: linear-gradient(45deg, $black, #333333);
+      }
+    }
+  }
+
+  &-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    @media screen and (max-width: 576px) {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    & > button {
+        font-weight: bold;
+        font-size: 22px;
+        padding: 15px 0;
+        min-width: 250px;
+        border-radius: 50px;
+        text-align: center;
+        color: $white;
+        cursor: pointer;
+        transition: all .2s;
+
+        @media screen and (max-width: 768px) {
+            min-width: 170px;
+        }
+
+        @media screen and (max-width: 576px) {
+            min-width: inherit;
+            width: 100%;
+            max-width: 350px;
+        }
+
+        @media screen and (min-width: 576px) {
+            &:hover{
+                transform: translateY(-5px);
+            }
+        }
+
+        &.blue{
+            background: linear-gradient(45deg,#002333,#10454F);
+            border: none;
+
+            &:hover{
+                box-shadow: 0 7px 30px rgba($color: #506266, $alpha: 0.75);
+            }
+        }
+
+        &.orange{
+            background: linear-gradient(45deg, #10454F, #506266);
+            border: none;
+
+            &:hover{
+                box-shadow: 0 7px 30px rgba($color: #506266, $alpha: 0.75);
+            }
+        }
+    }
+  }
+}

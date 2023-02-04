@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@500&family=Roboto:wght@400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*background: #849EBF;*/
+    background: grey;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+body::before{
+    content: '';
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 500px;
+    height: 270px;
+    background: linear-gradient(-25deg, #000, #445, #000);
+    border: none;
+    border-radius: 15px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 0 2px 0 #000;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 10px 50px -10px #000;
+    animation: cardAnimation 1.3s alternate infinite ;
+}
+
+.card::before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 100%;
+    box-shadow: 0 0 50px 10px rgba(38, 38, 38, 0.9) inset;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes cardAnimation{
+    from{transform: translateY(-15px);}
+}
+
+.card-top, .card-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-top svg{
+    transform: rotate(90deg);
+    width: 50px;
+    height: 50px;
+}
+
+.card-title{
+    font-size: 1.8rem;
+    z-index: 1;
+}
+
+.card-center{
+    z-index: 1;
+}
+.card-center img{
+    width: 80px;
+    padding-left: 2rem;
+}
+
+.card-bottom-left, .card-bottom-right{
+    display: flex;
+    flex-direction: column;
+}
+
+.card-bottom-left{
+    gap: .7rem;
+}
+
+.card-number{
+    font-family: 'Exo', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+}
+
+.card-name{
+    margin-top: 10px;
+}
+
+.card-type{
+    text-align: center;
+}
